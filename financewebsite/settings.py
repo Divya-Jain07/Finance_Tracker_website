@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-z_td-&v4)x4of*k!j+r79=vpbfp$uhnpnv7r0#)uvqbj50&a2q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -127,6 +127,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'financewebsite/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
