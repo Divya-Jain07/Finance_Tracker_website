@@ -81,14 +81,15 @@ WSGI_APPLICATION = 'financewebsite.wsgi.application'
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
+        # This is the "fallback". If DATABASE_URL isn't found, use SQLite locally.
+        default=os.environ.get('DATABASE_URL', f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}"),
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=True if os.environ.get('DATABASE_URL') else False
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
