@@ -69,3 +69,12 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      .showPassword{
+        cursor:pointer;
+        transition: all;
+
+      }
+      .showPassword:hover{
+        transform: scale(1.12);
+      }

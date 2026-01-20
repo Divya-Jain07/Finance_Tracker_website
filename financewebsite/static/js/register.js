@@ -7,6 +7,12 @@ const emailField=document.querySelector('#emailField')
 const emailFeedback=document.querySelector('.emailFeedback')
 const usernameSuccessOutput=document.querySelector('.usernameSuccessOutput')
 const emailSuccessOutput=document.querySelector('.emailSuccessOutput')
+const showPasswordBtn=document.querySelector('.showPasswordBtn')
+const passwordField=document.querySelector('#passwordField')
+const toggleIcon=document.querySelector('#toggleIcon')
+const showPasswordText=document.querySelector('.showPasswordText')
+
+
 
 
 usernameField.addEventListener("keyup", (e)=> { //here e is the element typed on the keyboard
@@ -68,4 +74,22 @@ emailField.addEventListener("keyup",(e)=>
         })
     }
 })
+
+showPasswordBtn.addEventListener("click",(e)=>{
+    if(showPasswordText.textContent=='SHOW')
+    {
+        showPasswordText.textContent='HIDE'
+        passwordField.setAttribute('type','text')
+        toggleIcon.classList.replace('fa-eye','fa-eye-slash')
+
+    }
+    else
+    {
+        showPasswordText.textContent='SHOW'
+         passwordField.setAttribute('type','password')
+         toggleIcon.classList.replace('fa-eye-slash','fa-eye')
+    }
+})
+
+
 //when types

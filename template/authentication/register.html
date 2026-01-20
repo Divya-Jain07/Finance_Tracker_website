@@ -1,6 +1,7 @@
 {% extends "base_auth.html" %}
 {% load static %}
 {% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <div class="row mt-5">
     <div class="col-md-4"></div>
@@ -23,18 +24,22 @@
                             <input type="email" name="email" placeholder="email" id="emailField" class="form-control form-control-sm">
                         </div>
                         <div class="emailFeedback" style="display: none;"></div>
-                        
+
                         <p class="text-sm text-success emailSuccessOutput"></p>
 
-                        <div class="form-group mb-3">
+                        <div class="form-group mt-4 ">
                             <input type="password" name="password" placeholder="password" id="passwordField" class="form-control form-control-sm">
 
-                            <div class="text-end py-2">
-                                <small class="float-end" style="cursor:pointer">SHOW</small>
+                            <div class="text-end py-2 d-flex justify-content-end showPasswordBtn">
+                                <span class="input-group-text border-0  ">
+                                    <i class="fas fa-eye float-end showPassword " id="toggleIcon" style="cursor: pointer;"></i>
+                                    <small class="float-end showPasswordText showPassword ms-2" >SHOW</small>
+                                </span>
+                                
                             </div>
                     
                         </div>
-                        <div class="d-grid gap-2 mt-4">
+                        <div class="d-grid gap-3 mt-4 ">
 
                         <input type="submit" value="Register" class="btn btn-primary btn-sm" />
                         </div>
